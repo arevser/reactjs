@@ -1,26 +1,37 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {Component} from 'react';
+import './styles/App.css';
+import './styles/header.css';
+import './styles/main.css';
+import {ShowSidebarBtn} from './components/showsidebarbtn';
+import {Footer} from './components/footer';
+import {Sidebar} from "./components/sidebar";
+import {Content} from "./components/content";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends Component {
+
+    state = {
+        showSidebar: false
+    };
+
+    onClickBtn = () => {
+        this.setState({ showSidebar: !this.state.showSidebar });
+    };
+
+    render() {
+        return (
+            <div className="App">
+                <div className="header">
+                    <ShowSidebarBtn onClickBtn={this.onClickBtn}/>
+                </div>
+                <div className="main">
+                    { this.state.showSidebar && <Sidebar />}
+                    <Content/>
+                </div>
+                <Footer/>
+            </div>
+        );
+    }
 }
 
 export default App;

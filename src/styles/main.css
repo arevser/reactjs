@@ -1,0 +1,22 @@
+.main {
+    align-items: center;
+    display: flex;
+    border: 1px solid darkblue;
+    flex-flow: row wrap;
+    justify-content: space-around;
+    min-height: 400px;
+}
+
+.sidebar,
+.content {
+    border: 1px solid yellowgreen;
+    min-height: 300px;
+}
+
+.sidebar{
+    width: 30%;
+}
+
+.content{
+    width: 65%;
+}
