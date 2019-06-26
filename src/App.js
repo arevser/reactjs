@@ -4,7 +4,7 @@ import './styles/header.css';
 import './styles/main.css';
 import {ShowSidebarBtn} from './components/showsidebarbtn';
 import {Footer} from './components/footer';
-import {Sidebar} from "./components/sidebar";
+import Sidebar from "./components/sidebar";
 import {Content} from "./components/content";
 
 
